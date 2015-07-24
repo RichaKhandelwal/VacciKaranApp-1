@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="richa.osahub.com.vaccikaranapp.HomePage"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="0.25"
+                android:id="@+id/schedule"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:id="@+id/img1"
+                    android:src="@drawable/finalvaccischeduler"
+                    android:scaleType="fitXY" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="false"
+                    android:id="@+id/schedule1"
+                    android:textColor="#ff960513"
+                    android:selectAllOnFocus="false"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="VacciScheduler"
+
+                    android:background="#ffffffff"
+                    android:saveEnabled="false"
+                    android:scrollHorizontally="false"
+                    android:scrollbarAlwaysDrawHorizontalTrack="false"
+                    android:scrollbarAlwaysDrawVerticalTrack="false"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="0.25"
+                android:id="@+id/locator"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:id="@+id/img2"
+                    android:src="@drawable/locator1"
+                    android:saveEnabled="false"
+                    android:scaleType="fitXY" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="false"
+                    android:id="@+id/locate1"
+                    android:textColor="#ff960513"
+                    android:textAllCaps="false"
+                    android:text="VacciLocator"
+                    android:soundEffectsEnabled="false"
+                    android:singleLine="false"
+                    android:selectAllOnFocus="false"
+                    android:background="#ffffffff"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="0.25"
+                android:id="@+id/wall"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:id="@+id/img3"
+                    android:src="@drawable/vacciwall1"
+                    android:scaleType="fitXY" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="false"
+                    android:id="@+id/wall1"
+                    android:background="#ffffffff"
+                    android:text="VacciWall"
+                    android:textColor="#ff960513"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="0.25"
+                android:id="@+id/forum"
+                android:layout_marginTop="15dp"
+                android:baselineAligned="false">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:id="@+id/img4"
+                    android:src="@drawable/vacciforum"
+                    android:scaleType="fitXY" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="false"
+                    android:id="@+id/forum1"
+                    android:textColor="#ff960513"
+                    android:text="VacciForum"
+                    android:soundEffectsEnabled="false"
+                    android:singleLine="false"
+                    android:selectAllOnFocus="false"
+                    android:background="#ffffffff"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
