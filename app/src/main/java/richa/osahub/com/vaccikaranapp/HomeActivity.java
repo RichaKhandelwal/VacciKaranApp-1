@@ -110,12 +110,12 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
             // Return a PlaceholderFragment (defined as a static inner class below).
            // return PlaceholderFragment.newInstance(position + 1);
             switch (position){
-                case 0: return new Notify();
-                case 1: return new HomePage();
+                case 0: return new Updates();
+                case 1: return new HomeFragment();
                 case 2: return new Profile();
             }
             return null;
-          //  return new HomePage();
+          //  return new HomeFragment();
         }
 
         @Override

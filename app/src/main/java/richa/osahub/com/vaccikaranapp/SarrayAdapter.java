@@ -15,9 +15,9 @@ import java.util.List;
  */
 public class SarrayAdapter extends ArrayAdapter {
     LayoutInflater inflater;
-    List<Sfeed> list=new ArrayList<>();
+    List<SfeedPojo> list=new ArrayList<>();
 
-    public SarrayAdapter(Activity activity, List<Sfeed> objects) {
+    public SarrayAdapter(Activity activity, List<SfeedPojo> objects) {
       
         super(activity,R.layout.layout, objects);
         list=objects;

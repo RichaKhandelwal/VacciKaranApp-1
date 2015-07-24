@@ -6,7 +6,6 @@ import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -62,7 +61,7 @@ public class VacciLocatorActivity extends AppCompatActivity {
 
         // To show my location button on Google maps
         googleMap.setMyLocationEnabled(true);
-        LocationManager locationManager = HomePage.locationManager;
+        LocationManager locationManager = HomeFragment.locationManager;
         Criteria criteria = new Criteria();
 
         final Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));

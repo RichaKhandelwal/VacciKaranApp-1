@@ -13,7 +13,7 @@ import java.util.List;
 
 
 public class SchedulerFragment extends Fragment {
-    ArrayAdapter<Vaccinations> vaccinationArrayAdapter;
+    ArrayAdapter<VaccinationsPojo> vaccinationArrayAdapter;
     ListView listView;
 
     public SchedulerFragment() {
@@ -26,10 +26,10 @@ public class SchedulerFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_scheduler, container, false);
         listView = (ListView) rootView.findViewById(R.id.listView);
-        Vaccinations vaccination = new Vaccinations("abc", "def","jkh jkh jhdgsdfghs sdfjsij dafh");
-        Vaccinations vaccination1= new Vaccinations("abcd","hgdg","hgsdhug adhgdf dgdgjsa bdfhg");
-        Vaccinations vaccination2= new Vaccinations("abcd","hgdg","hgsdhug adhgdf dgdgjsa bdfhg");
-        List<Vaccinations> vaccinations = new ArrayList<>();
+        VaccinationsPojo vaccination = new VaccinationsPojo("abc", "def","jkh jkh jhdgsdfghs sdfjsij dafh");
+        VaccinationsPojo vaccination1= new VaccinationsPojo("abcd","hgdg","hgsdhug adhgdf dgdgjsa bdfhg");
+        VaccinationsPojo vaccination2= new VaccinationsPojo("abcd","hgdg","hgsdhug adhgdf dgdgjsa bdfhg");
+        List<VaccinationsPojo> vaccinations = new ArrayList<>();
         vaccinations.add(vaccination);
         vaccinations.add(vaccination1);
         vaccinations.add(vaccination2);

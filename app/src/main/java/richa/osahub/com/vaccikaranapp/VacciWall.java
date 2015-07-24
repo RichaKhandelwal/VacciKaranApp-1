@@ -16,7 +16,7 @@ public class VacciWall extends AppCompatActivity {
 
     ListView posts;
 
-    List<Sfeed> listOfFeeds = new ArrayList();
+    List<SfeedPojo> listOfFeeds = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +25,8 @@ public class VacciWall extends AppCompatActivity {
         posts = (ListView) findViewById(R.id.posts);
 
         for (int i = 0; i < 10; i++) {
-            Sfeed sfeed = new Sfeed("abc", new Date(), "xyz");
-            listOfFeeds.add(sfeed);
+            SfeedPojo sfeedPojo = new SfeedPojo("abc", new Date(), "xyz");
+            listOfFeeds.add(sfeedPojo);
         }
 
         SarrayAdapter sarrayAdapter = new SarrayAdapter(VacciWall.this, listOfFeeds);

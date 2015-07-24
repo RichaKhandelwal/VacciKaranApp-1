@@ -8,17 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 public class Register extends AppCompatActivity {
-
-    EditText first, last, email, pass, repass, dob, phone;
+    LinearLayout linearLayout3;
+    EditText first, last, email, pass,cName,  dob, phone;
     TextView gender;
     TextView missing;
-    RadioButton female, male;
+    RadioButton selectedGender;
+    RadioGroup gen;
     Button register1;
     Boolean validateFlag = true;
 
@@ -27,7 +29,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        SharedPreferences prefs = getSharedPreferences("sarmin", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("Richie", MODE_PRIVATE);
         final SharedPreferences.Editor editor = prefs.edit();
 
         first = (EditText) findViewById(R.id.first);
@@ -35,12 +37,14 @@ public class Register extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email);
         dob = (EditText) findViewById(R.id.dob);
         pass = (EditText) findViewById(R.id.pass);
-        repass = (EditText) findViewById(R.id.repass);
+        //repass = (EditText) findViewById(R.id.repass);
         phone = (EditText) findViewById(R.id.phone);
         gender = (TextView) findViewById(R.id.gender);
-        female = (RadioButton) findViewById(R.id.female);
-        male = (RadioButton) findViewById(R.id.male);
-
+        // girl = (RadioButton) findViewById(R.id.girl);
+        // boy = (RadioButton) findViewById(R.id.boy);
+        cName = (EditText) findViewById(R.id.cName);
+        gen = (RadioGroup) findViewById(R.id.gen);
+        linearLayout3 = (LinearLayout) findViewById(R.id.linearLayout3);
         missing = (TextView) findViewById(R.id.missing);
         register1 = (Button) findViewById(R.id.register1);
 
@@ -58,8 +62,16 @@ public class Register extends AppCompatActivity {
                     editor.putString("dob", dob.getText().toString());
                     editor.putString("password", pass.getText().toString());
                     editor.putString("phone", phone.getText().toString());
+                    editor.putString("child_name",cName.getText().toString());
+
+                    int selectedGenderID = gen.getCheckedRadioButtonId();
+
+                    selectedGender = (RadioButton) findViewById(selectedGenderID);
+
+                    Toast.makeText(getApplicationContext(), selectedGender.getText().toString(), Toast.LENGTH_SHORT).show();
+
                     editor.apply();
-                    Intent inte = new Intent(getApplicationContext(), VacciKaran.class);
+                    Intent inte = new Intent(getApplicationContext(), SigninActivity.class);
                     startActivity(inte);
                 } else
                 {
@@ -98,6 +110,12 @@ public class Register extends AppCompatActivity {
                 phone.setHintTextColor(Color.GRAY);
             }
         });
+        cName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cName.setHintTextColor(Color.GRAY);
+            }
+        });
         pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,16 +123,22 @@ public class Register extends AppCompatActivity {
                 pass.setTextColor(Color.BLACK);
             }
         });
-        repass.setOnClickListener(new View.OnClickListener() {
+       /* repass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 repass.setHintTextColor(Color.GRAY);
                 pass.setTextColor(Color.BLACK);
             }
-        });
+        }); */
+
+
     }
 
+
+
     public Boolean validate() {
+        validateFlag = true;
+
         if (first.getText().toString().equals("")) {
             validateFlag = false;
             missing.setText("**Fields Required!!!");
@@ -151,6 +175,12 @@ public class Register extends AppCompatActivity {
 
         }
 
+        if (cName.getText().toString().equals("")) {
+            validateFlag = false;
+            missing.setText("**Fields Required!!!");
+            cName.setHintTextColor(Color.RED);
+
+        }
         if (pass.getText().toString().equals("")) {
             validateFlag = false;
             missing.setText("**Fields Required!!");
@@ -159,13 +189,13 @@ public class Register extends AppCompatActivity {
         }
 
 
-        if (repass.getText().toString().equals("")) {
+       /* if (repass.getText().toString().equals("")) {
             validateFlag = false;
             missing.setText("**Fields Required!!");
             repass.setHintTextColor(Color.RED);
 
         }
-
+*/
         /*if (female.getText().toString().equals("")) {
             missing.setText("**Fields Required!!");
             female.setTextColor(Color.RED);
@@ -186,12 +216,12 @@ public class Register extends AppCompatActivity {
             });
         }*/
 
-        if (!pass.getText().toString().equals(repass.getText().toString())) {
+      /*  if (!pass.getText().toString().equals(repass.getText().toString())) {
             validateFlag = false;
             missing.setText("Passwords do not match");
             pass.setTextColor(Color.RED);
             repass.setTextColor(Color.RED);
-        }
+        }*/
         return validateFlag;
     }
 

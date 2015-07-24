@@ -1,13 +1,11 @@
 package richa.osahub.com.vaccikaranapp;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -65,7 +63,7 @@ public class MapsFragment extends Fragment {
 
         // To show my location button on Google maps
         googleMap.setMyLocationEnabled(true);
-        LocationManager locationManager = HomePage.locationManager;
+        LocationManager locationManager = HomeFragment.locationManager;
         Criteria criteria = new Criteria();
 
         final Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));

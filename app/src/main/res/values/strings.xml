@@ -19,4 +19,8 @@
     <string name="title_activity_vacci_locator">VacciLocatorActivity</string>
     <string name="title_activity_vacci_forum">VacciForumActivity</string>
     <string name="title_activity_vacci_karan">VacciKaranActivity</string>
+    <string name="title_activity_notification_settings">NotificationSettings</string>
+    <string name="title_activity_vacci_scheduler">VacciSchedulerActivity</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
 </resources>
