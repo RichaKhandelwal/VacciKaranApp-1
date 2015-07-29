@@ -1,7 +1,9 @@
 package richa.osahub.com.vaccikaranapp;
 
 import java.util.Locale;
+import java.util.zip.Inflater;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -76,11 +78,50 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+                //noinspection SimplifiableIfStatement
+       if (id == R.id.action_notificationsettings) {
+        Intent intent = new Intent(getApplicationContext(),NotificationSettings.class);
+           startActivity(intent);
+            return true;
+
+        }
+        if(id == R.id.action_profile){
+            Intent intent = new Intent(getApplicationContext(),Profile.class);
+            startActivity(intent);
+            finish();
+            return true;
+
+        }
+        if (id == R.id.action_changeNumber){
+            Intent intent = new Intent(getApplicationContext(),ChangeNumber.class);
+            startActivity(intent);
+            finish();
             return true;
         }
+        if (id == R.id.action_changePassword){
+            Intent intent = new Intent(getApplicationContext(),ChangePassword.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        if (id == R.id.action_about_app){
+            Intent intent = new Intent(getApplicationContext(),HelpActivity.class);
 
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        if(id == R.id.action_about_us){
+            Intent intent = new Intent(getApplicationContext(),AboutUsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if(id == R.id.action_signOut){
+            Intent intent = new Intent(getApplicationContext(),SigninActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

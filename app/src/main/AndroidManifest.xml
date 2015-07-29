@@ -119,16 +119,40 @@
         <activity
             android:name=".NotificationSettings"
             android:label="@string/title_activity_notification_settings" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="richa.osahub.com.vaccikaranapp.HomeActivity" />
 
         </activity>
         <activity
             android:name=".AboutUsActivity"
             android:label="@string/title_activity_about_us" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="richa.osahub.com.vaccikaranapp.HomeActivity" />
+
         </activity>
         <activity
             android:name=".HelpActivity"
             android:label="@string/title_activity_help" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="richa.osahub.com.vaccikaranapp.HomeActivity" />
+
         </activity>
+
+        <activity android:name=".ChangeNumber"
+            android:label="ChangeNumber">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="richa.osahub.com.vaccikaranapp.HomeActivity" />
+
+        </activity>
+<activity android:name=".ChangePassword"
+
+android:label="Change Password">
+
+</activity>
     </application>
 
 </manifest>

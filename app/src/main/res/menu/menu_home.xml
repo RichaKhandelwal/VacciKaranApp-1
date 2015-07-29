@@ -1,38 +1,43 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".HomeActivity">
-    <item android:id="@+id/action_notificationsettings" android:title="Notification Options"
-        android:orderInCategory="100" app:showAsAction="always" />
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeActivity">
+    <item
+        android:id="@+id/action_notificationsettings"
+        android:title="Notification Settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_profile"
-        android:orderInCategory="200"
+        android:orderInCategory="100"
         android:title="Profile"
-        app:showAsAction="ifRoom"/>
-    <item
-        android:id="@+id/action_signOut"
-        android:orderInCategory="700"
-        android:title="SIgn Out"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/action_changePassword"
-        android:orderInCategory="300"
+        android:orderInCategory="100"
         android:title="Change Password"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_changeNumber"
-        android:orderInCategory="400"
+        android:orderInCategory="100"
         android:title="Change Number"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_about_us"
+        android:orderInCategory="100"
         android:title="About Us"
-        app:showAsAction="ifRoom"
-        android:orderInCategory="600"
-        />
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_about_app"
+        android:orderInCategory="100"
         android:title="About App"
-        android:orderInCategory="500"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_signOut"
+        android:orderInCategory="100"
+        android:title="SIgn Out"
+        app:showAsAction="never" />
+
 </menu>
 

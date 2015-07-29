@@ -30,8 +30,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:id="@+id/img1"
-                    android:src="@drawable/finalvaccischeduler" />
+                    android:id="@+id/img1" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -67,7 +66,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:id="@+id/img2"
-                    android:src="@drawable/locator1"
                     android:saveEnabled="false"
                     android:scaleType="fitXY" />
                 <TextView
@@ -99,8 +97,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:id="@+id/img3"
-                    android:src="@drawable/vacciwall1" />
+                    android:id="@+id/img3" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -127,8 +124,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:id="@+id/img4"
-                    android:src="@drawable/vacciforum" />
+                    android:id="@+id/img4" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

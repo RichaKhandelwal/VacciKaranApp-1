@@ -5,9 +5,13 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.PasswordTransformationMethod;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -22,6 +26,7 @@ public class Register extends AppCompatActivity {
     RadioButton selectedGender;
     RadioGroup gen;
     Button register1;
+    ImageButton check;
     Boolean validateFlag = true;
 
     @Override
@@ -47,7 +52,7 @@ public class Register extends AppCompatActivity {
         linearLayout3 = (LinearLayout) findViewById(R.id.linearLayout3);
         missing = (TextView) findViewById(R.id.missing);
         register1 = (Button) findViewById(R.id.register1);
-
+        check = (ImageButton) findViewById(R.id.check);
 
         register1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,9 +78,10 @@ public class Register extends AppCompatActivity {
                     editor.apply();
                     Intent inte = new Intent(getApplicationContext(), SigninActivity.class);
                     startActivity(inte);
+              finish();
                 } else
                 {
-                    Toast.makeText( getApplicationContext(),"Field Missing",Toast.LENGTH_LONG);
+                    Toast.makeText( getApplicationContext(),"Field Missing",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -130,7 +136,13 @@ public class Register extends AppCompatActivity {
                 pass.setTextColor(Color.BLACK);
             }
         }); */
+         check.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
+             }
+         });
 
     }
 

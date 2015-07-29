@@ -32,7 +32,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:id="@+id/img1"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/newlocator" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
@@ -69,9 +70,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:id="@+id/img2"
-                    android:src="@drawable/locator1"
                     android:saveEnabled="false"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/newlocator" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
@@ -103,8 +104,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:id="@+id/img3"
-                    android:src="@drawable/vacciwall1"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/newlocator" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
@@ -133,8 +134,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:id="@+id/img4"
-                    android:src="@drawable/vacciforum"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/newlocator" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
