@@ -4,6 +4,7 @@ import java.util.Locale;
 import java.util.zip.Inflater;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 
 public class HomeActivity extends AppCompatActivity implements ActionBar.TabListener {
@@ -50,18 +52,17 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
             }
         });
 
-        // For each of the sections in the app, add a tab to the action bar.
-        for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
-            // Create a tab with text corresponding to the page title defined by
-            // the adapter. Also specify this Activity object, which implements
-            // the TabListener interface, as the callback (listener) for when
-            // this tab is selected.
             actionBar.addTab(
                     actionBar.newTab()
-                            .setText(mSectionsPagerAdapter.getPageTitle(i))
-                            .setTabListener(this));
-        }
+                            .setText(mSectionsPagerAdapter.getPageTitle(0))
+                            .setTabListener(this),0,false);
+        actionBar.addTab(
+                actionBar.newTab()
+                        .setText(mSectionsPagerAdapter.getPageTitle(1))
+                        .setTabListener(this), 1, true);
+
     }
+
 
 
     @Override
@@ -82,53 +83,61 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
        if (id == R.id.action_notificationsettings) {
         Intent intent = new Intent(getApplicationContext(),NotificationSettings.class);
            startActivity(intent);
+   //        finish();
             return true;
 
         }
         if(id == R.id.action_profile){
             Intent intent = new Intent(getApplicationContext(),Profile.class);
             startActivity(intent);
-            finish();
+     //       finish();
             return true;
 
         }
         if (id == R.id.action_changeNumber){
             Intent intent = new Intent(getApplicationContext(),ChangeNumber.class);
             startActivity(intent);
-            finish();
+       //     finish();
             return true;
         }
         if (id == R.id.action_changePassword){
             Intent intent = new Intent(getApplicationContext(),ChangePassword.class);
             startActivity(intent);
-            finish();
+         //   finish();
             return true;
         }
         if (id == R.id.action_about_app){
             Intent intent = new Intent(getApplicationContext(),HelpActivity.class);
 
             startActivity(intent);
-            finish();
+//            finish();
             return true;
         }
         if(id == R.id.action_about_us){
             Intent intent = new Intent(getApplicationContext(),AboutUsActivity.class);
             startActivity(intent);
+  //            finish();
             return true;
         }
         if(id == R.id.action_signOut){
+            final SharedPreferences prefs = getSharedPreferences("Richie", MODE_PRIVATE);
+            final SharedPreferences.Editor edit = prefs.edit();
+
             Intent intent = new Intent(getApplicationContext(),SigninActivity.class);
+            edit.putString("email", "");
+            edit.putString("password","");
+            edit.apply();
             startActivity(intent);
-            finish();
+
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // When the given tab is selected, switch to the corresponding page in
-        // the ViewPager.
+        @Override
+        public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+            // When the given tab is selected, switch to the corresponding page in
+            // the ViewPager.
         mViewPager.setCurrentItem(tab.getPosition());
     }
 
@@ -153,7 +162,7 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
             switch (position){
                 case 0: return new Updates();
                 case 1: return new HomeFragment();
-                case 2: return new Profile();
+
             }
             return null;
           //  return new HomeFragment();
@@ -162,7 +171,7 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
@@ -173,9 +182,7 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
                     return getString(R.string.title_updates).toUpperCase(l);
                 case 1:
                     return getString(R.string.title_home).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_Profile).toUpperCase(l);
-            }
+                     }
             return null;
         }
     }

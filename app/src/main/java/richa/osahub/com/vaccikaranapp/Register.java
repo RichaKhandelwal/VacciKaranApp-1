@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.text.style.ClickableSpan;
 import android.view.MotionEvent;
@@ -73,10 +74,8 @@ public class Register extends AppCompatActivity {
 
                     selectedGender = (RadioButton) findViewById(selectedGenderID);
 
-                    Toast.makeText(getApplicationContext(), selectedGender.getText().toString(), Toast.LENGTH_SHORT).show();
-
                     editor.apply();
-                    Intent inte = new Intent(getApplicationContext(), SigninActivity.class);
+                    Intent inte = new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(inte);
               finish();
                 } else
@@ -136,14 +135,20 @@ public class Register extends AppCompatActivity {
                 pass.setTextColor(Color.BLACK);
             }
         }); */
-         check.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-
-             }
-         });
-
+        check.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch(event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        pass.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        pass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
 

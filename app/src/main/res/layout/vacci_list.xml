@@ -50,10 +50,10 @@
 
 
             <ImageButton
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/info"
-                android:background="@drawable/info1"
+                android:background="@drawable/dropdown"
                 android:layout_gravity="center_vertical|left"
                 android:layout_weight="0.01"
                 />

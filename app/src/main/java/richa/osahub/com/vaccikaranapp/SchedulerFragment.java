@@ -26,9 +26,9 @@ public class SchedulerFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_scheduler, container, false);
         listView = (ListView) rootView.findViewById(R.id.listView);
-        VaccinationsPojo vaccination = new VaccinationsPojo("abc", "def","jkh jkh jhdgsdfghs sdfjsij dafh");
-        VaccinationsPojo vaccination1= new VaccinationsPojo("abcd","hgdg","hgsdhug adhgdf dgdgjsa bdfhg");
-        VaccinationsPojo vaccination2= new VaccinationsPojo("abcd","hgdg","hgsdhug adhgdf dgdgjsa bdfhg");
+        VaccinationsPojo vaccination = new VaccinationsPojo("Hepatitis B", "at birth","Protects your child against hepatitis B, a potentially serious disease");
+        VaccinationsPojo vaccination1= new VaccinationsPojo("Polio","at birth","The polio vaccine protects against poliomyelitis (polio), a highly infectious disease caused by a virus that invades the nervous system.");
+        VaccinationsPojo vaccination2= new VaccinationsPojo("Tuberculosis","birth to 6 weeks","The tuberculosis vaccine is recommended only for those children living with someone with TB who either cannot take the antibiotics required to treat the infection or who is infected with a strain that is highly resistant to all antibiotics.");
         List<VaccinationsPojo> vaccinations = new ArrayList<>();
         vaccinations.add(vaccination);
         vaccinations.add(vaccination1);

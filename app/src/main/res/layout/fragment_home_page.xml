@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="richa.osahub.com.vaccikaranapp.HomeFragment"
-    android:background="#ca1f1e20">
+    android:background="#461f1e20">
 
 
     <ScrollView
@@ -26,15 +26,17 @@
                 android:layout_alignParentStart="true"
                 android:layout_weight="1"
                 android:id="@+id/schedule"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:id="@+id/img1"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/newlocator" />
-                <TextView
+                    android:src="@drawable/finalvaccischeduler" />
+              <!--  <TextView
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:duplicateParentState="false"
@@ -52,7 +54,7 @@
                     android:gravity="center_vertical"
                     android:background="#ffffffff" />
 
-
+-->
             </LinearLayout>
 
             <LinearLayout
@@ -64,7 +66,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_weight="1"
                 android:id="@+id/locator"
-                android:layout_marginTop="15dp">
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -72,8 +76,8 @@
                     android:id="@+id/img2"
                     android:saveEnabled="false"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/newlocator" />
-                <TextView
+                    android:src="@drawable/locator1" />
+              <!--  <TextView
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:duplicateParentState="false"
@@ -88,6 +92,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textStyle="bold"
                     android:gravity="center_vertical" />
+                    -->
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -98,15 +103,17 @@
                 android:layout_alignParentStart="true"
                 android:layout_weight="1"
                 android:id="@+id/wall"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:id="@+id/img3"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/newlocator" />
-                <TextView
+                    android:src="@drawable/vacciwall1" />
+               <!-- <TextView
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:duplicateParentState="false"
@@ -117,6 +124,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textStyle="bold"
                     android:gravity="center_vertical" />
+                    -->
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -127,16 +135,19 @@
                 android:layout_alignParentStart="true"
                 android:layout_weight="1"
                 android:id="@+id/forum"
-                android:layout_marginTop="15dp"
-                android:baselineAligned="false">
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:id="@+id/img4"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/newlocator" />
-                <TextView
+                    android:src="@drawable/vacciforum" />
+           <!--     <TextView
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:id="@+id/forum1"
@@ -146,6 +157,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textStyle="bold"
                     android:gravity="center_vertical" />
+                    -->
             </LinearLayout>
 
         </LinearLayout>

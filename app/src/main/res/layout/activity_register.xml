@@ -172,18 +172,15 @@
                     android:inputType="date"
                     android:ems="10"
                     android:id="@+id/dob"
-                    android:textColorHint="#ff5d5956"
-                    android:textColor="#ff393532"
-                    android:layout_gravity="center_horizontal"
-                    android:hint="Enter Date of Birth"
-                    android:layout_marginTop="5dp" />
+                    android:hint="Date Of Birth" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Gender"
                     android:textColor="#ff5d5956"
-                    android:id="@+id/gender" />
+                    android:id="@+id/gender"
+                    android:layout_marginTop="5dp" />
 
                 <LinearLayout
                     android:orientation="horizontal"

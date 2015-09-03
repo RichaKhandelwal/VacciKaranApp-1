@@ -1,5 +1,7 @@
 package richa.osahub.com.vaccikaranapp;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Criteria;
@@ -52,7 +54,7 @@ public class VacciLocatorActivity extends AppCompatActivity {
 
         setUpMap();
         addingMarkers();
-        addingCircles();
+       // addingCircles();
         setOnLongClickListenerForAddingNewMarkers();
 
     }
@@ -76,6 +78,13 @@ public class VacciLocatorActivity extends AppCompatActivity {
                     .tilt(40)                   // Sets the tilt of the camera to 30 degrees
                     .build();                   // Creates a CameraPosition from the builder
             googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            // Adding a circle around Pacific Mall of 1000 meters radius.
+            googleMap.addCircle(new CircleOptions()
+                    .center(new LatLng(location.getLatitude(), location.getLongitude())) // Setting center point
+                    .radius(10000) // In meters
+                    .strokeColor(Color.RED) // Color of Border of Circle
+                    .fillColor(R.color.semi_blue) // Colour of fill, I've set the color to semi transparent blue which I've defined in colors.xml. For fill colour always use semi transparent colour.
+                    .strokeWidth(5)); // Width of red border.
 
         }
 
@@ -83,12 +92,12 @@ public class VacciLocatorActivity extends AppCompatActivity {
 
     private void addingMarkers() {
         // Adding marker to locations - This is a marker for Shipra Mall, which is close to my house. Zoom out to see the Marker
-        double latitude = 28.6322269;
-        double longitude = 77.3671697;
+        double latitude = 28.62498;
+        double longitude =  77.098477;
 
         // create marker
         MarkerOptions marker = new MarkerOptions().position(
-                new LatLng(latitude, longitude)).title("Shipra Mall");
+                new LatLng(latitude, longitude)).title("Vardhman Clinic");
 
         // Changing marker icon
         marker.icon(BitmapDescriptorFactory
@@ -99,31 +108,43 @@ public class VacciLocatorActivity extends AppCompatActivity {
 
 
         // Another marker for District Center in Janakpuri
-        double latitude2 = 28.6292303;
-        double longitude2 = 77.0805496;
+        double latitude2 = 28.637896;
+        double longitude2 = 77.112388;
 
         MarkerOptions marker2 = new MarkerOptions().position(
-                new LatLng(latitude2, longitude2)).title("District Center");
+                new LatLng(latitude2, longitude2)).title("CHILD CARE CLINIC AND VACCINATION CENTRE");
         marker2.icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         googleMap.addMarker(marker2);
         // End - Another marker for District Center in Janakpuri
-    }
 
+        double latitude3 = 28.650703;
+        double longitude3 = 77.161502;
+
+        MarkerOptions marker3 = new MarkerOptions().position(
+                new LatLng(latitude2, longitude2)).title("Dr A K Bansal, Consultant Child Specialist , Mother & Child Clinic and Vaccination Centre");
+        marker3.icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        googleMap.addMarker(marker3);
+
+        double latitude4 = 28.592899;
+        double longitude4 = 77.046151;
+
+        MarkerOptions marker4 = new MarkerOptions().position(
+                new LatLng(latitude2, longitude2)).title("Kumar Child Clinic");
+        marker4.icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        googleMap.addMarker(marker4);
+
+    }
+/*
     private void addingCircles() {
         // Latitude and Longitude of Pacific Mall Subash Nagar
         double latitude = 28.6438947;
         double longitude = 77.1128296;
 
-        // Adding a circle around Pacific Mall of 1000 meters radius.
-        googleMap.addCircle(new CircleOptions()
-                .center(new LatLng(latitude, longitude)) // Setting center point
-                .radius(1000) // In meters
-                .strokeColor(Color.RED) // Color of Border of Circle
-                .fillColor(R.color.semi_blue) // Colour of fill, I've set the color to semi transparent blue which I've defined in colors.xml. For fill colour always use semi transparent colour.
-                .strokeWidth(5)); // Width of red border.
     }
-
+*/
     private void setOnLongClickListenerForAddingNewMarkers() {
         googleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
 
@@ -192,8 +213,8 @@ public class VacciLocatorActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_vacci_locator, menu);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_home, menu);
         return true;
     }
 
@@ -205,10 +226,58 @@ public class VacciLocatorActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_notificationsettings) {
+            Intent intent = new Intent(getApplicationContext(),NotificationSettings.class);
+            startActivity(intent);
+            //        finish();
+            return true;
+
+        }
+        if(id == R.id.action_profile){
+            Intent intent = new Intent(getApplicationContext(),Profile.class);
+            startActivity(intent);
+            //       finish();
+            return true;
+
+        }
+        if (id == R.id.action_changeNumber){
+            Intent intent = new Intent(getApplicationContext(),ChangeNumber.class);
+            startActivity(intent);
+            //     finish();
             return true;
         }
+        if (id == R.id.action_changePassword){
+            Intent intent = new Intent(getApplicationContext(),ChangePassword.class);
+            startActivity(intent);
+            //   finish();
+            return true;
+        }
+        if (id == R.id.action_about_app){
+            Intent intent = new Intent(getApplicationContext(),HelpActivity.class);
 
+            startActivity(intent);
+//            finish();
+            return true;
+        }
+        if(id == R.id.action_about_us){
+            Intent intent = new Intent(getApplicationContext(),AboutUsActivity.class);
+            startActivity(intent);
+            //            finish();
+            return true;
+        }
+        if(id == R.id.action_signOut){
+            final SharedPreferences prefs = getSharedPreferences("Richie", MODE_PRIVATE);
+            final SharedPreferences.Editor edit = prefs.edit();
+
+            Intent intent = new Intent(getApplicationContext(),SigninActivity.class);
+            edit.putString("email", "");
+            edit.putString("password","");
+            edit.apply();
+            startActivity(intent);
+
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
+
 }
